@@ -22,6 +22,10 @@ migrationsRun()
 
 const URL = process.env.PORT || 3333
 
+app.get('/showMe', (req, res) => {
+  return res.status(202).json('olá')
+})
+
 app.use((error, req, res, next) => {
   if (error instanceof AppError) {
     return res.status(error.statusCode).json({
